@@ -44,7 +44,7 @@ Forked from[qinghuas/ss-panel-v3-subscription](https://github.com/qinghuas/ss-pa
     
     注：不建议嫌麻烦的用户修改数据库名称，否则还要修改SQL文件。
 
-4.修改api.php的34~36行（pcapi.php修改33~35行）的信息。有多少个服务器IP就按照格式写几行。分别通过生成连接字串的形式赋值。注意修改调用get_ss_url函数中的第一个字段。
+4.修改api.php的34\~36行（pcapi.php修改33\~35行）的信息。有多少个服务器IP就按照格式写几行。分别通过生成连接字串的形式赋值。注意修改调用get_ss_url函数中的第一个字段。
 
 5.修改api.php的38行（pcapi.php修改37行），拼接所有server_**_url字串
 
