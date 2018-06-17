@@ -15,6 +15,7 @@ Forked from[qinghuas/ss-panel-v3-subscription](https://github.com/qinghuas/ss-pa
 
 更新日志
 ---
+`2018.06.17` 新增功能，PC用户可以通过下载gui-config.json来获取更新。
 `2017.12.17` 删繁就简，按照下面的说明配置好环境，导入sql文件，移动api.php到webroot就可以使用了！
 
 系统需求
@@ -37,17 +38,15 @@ Forked from[qinghuas/ss-panel-v3-subscription](https://github.com/qinghuas/ss-pa
     cd ./ss_subscription_API
     mv ./api.php /var/www/html
 
-3.编辑api.php，按需修改自己的数据库连接信息。
+3.修改db_conf.php，按提示填写自己的数据库连接信息。
 
-    vim /var/www/html/api.php
+    vim /var/www/html/db_conf.php
     
-    修改第6行：
-    $db_host = 'localhost';$db_user = 'root';$db_pw = '填写你的密码';$db_name = 'ssapi';
     注：不建议嫌麻烦的用户修改数据库名称，否则还要修改SQL文件。
 
-4.修改35行~37行的信息。有多少个服务器IP就按照格式写几行。分别通过生成连接字串的形式赋值。注意修改调用get_ss_url函数中的第一个字段。
+4.修改api.php的34~36行（pcapi.php修改33~35行）的信息。有多少个服务器IP就按照格式写几行。分别通过生成连接字串的形式赋值。注意修改调用get_ss_url函数中的第一个字段。
 
-5.修改39行，拼接所有server_**_url字串
+5.修改api.php的38行（pcapi.php修改37行），拼接所有server_**_url字串
 
 当服务器只有一台时<br>
 
@@ -59,11 +58,13 @@ Forked from[qinghuas/ss-panel-v3-subscription](https://github.com/qinghuas/ss-pa
 
 注：`"\r\n"`是为ss://链接换行，只需在倒数第二个服务器变量名后添加
 
-6.在MySQL中执行ssapi.sql文件，并对应服务器信息与用户的ss认证信息。
+6.在MySQL中执行ssapi.sql文件，并对应编辑服务器信息与用户的ss认证信息。
 
 7.配置完成，假如您将文件放在了webroot中，且域名为`https://domain.com`，我们访问订阅地址<br>
 `https://domain.com/api.php?port=端口&passwd=ss的密码`<br>
-当所有配置正确时，您可看到一串长链接，当账号密码错误时，您可看到错误401的提示。<br>
+当所有配置正确时，您可看到一串长链接。当账号密码错误时，您可看到错误401的提示。<br>
+PC版访问 `https://domain.com/api.php?port=端口&passwd=ss的密码`<br>
+当所有配置正确时，您可看到浏览器提示下载配置文件，将配置文件放入ss的文件夹中即可。当账号密码错误时，您可看到错误401的提示。<br>
 
 IOS平台订阅
 ---
