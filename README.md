@@ -3,9 +3,9 @@
 Forked from[qinghuas/ss-panel-v3-subscription](https://github.com/qinghuas/ss-panel-v3-subscription)<br>
 感谢 @qinghuas 的开源项目让我免去了重复造轮子的麻烦。<br>
 
-不想安装面板的黑心老板也能以订阅链接的方式自动化分发链接信息了！（大雾）<br>
-笔者偷懒用认证用户端口号与密码的方式进行api的身份认证，我是不是很机智(<ゝω·)☆~Kira <br>
-加密方式已经钦定为`chacha20-ietf-poly1305` (๑•̀ㅂ•́)و✧ <br>
+不想安装面板的黑心老板也能以订阅链接的方式自动化分发链接信息了！<br>
+笔者偷懒用认证用户端口号与密码的方式进行api的身份认证。 <br>
+加密方式已经钦定为`chacha20-ietf-poly1305`  <br>
 
 请注意：笔者仅为在iOS平台的shadowrocket上方便以订阅功能更新原版SS连接信息而编写，需要支持其他协议请自行修改。<br>
 
